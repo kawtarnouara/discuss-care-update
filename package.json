@@ -6,7 +6,7 @@
   "author": "Piman Security",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder --publish never",
+    "build": "electron-builder --publish never --win",
     "deploy": "electron-builder --publish always"
   },
   "dependencies": {
@@ -38,12 +38,14 @@
       "entitlements": "./build/entitlements.mac.plist",
       "entitlementsInherit": "./build/entitlements.mac.inherit.plist"
     },
+    "win":{
+      "target": "msi"
+    },
     "directories": {
       "output": "app",
       "buildResources": "build"
     },
     "productName": "Piman Discuss",
-    "afterSign": "/Users/kawtar/apps/discuss-electron-update/electron/notarize.js",
     "protocols": [
       {
         "name": "Piman discuss",
@@ -61,8 +63,7 @@
     "hardenedRuntime": true,
     "gatekeeperAssess": false,
     "entitlements": "build/entitlements.mac.plist",
-    "entitlementsInherit": "build/entitlements.mac.inherit.plist",
-    "afterSign": "/Users/kawtar/apps/discuss-electron-update/electron/notarize.js"
+    "entitlementsInherit": "build/entitlements.mac.inherit.plist"
   },
   "mas": {
     "entitlements": "build/entitlements.mac.plist",
