@@ -1,9 +1,9 @@
 {
   "name": "discuss",
   "description": "Piman Discuss, La solution de communication privee, dediee, sur mesure et chiffree",
-  "version": "4.2.5",
+  "version": "4.3.1",
   "main": "./main.js",
-  "author": "PRIVATE DISCUSS",
+  "author": "PRIVATE DISCUSS <contact@piman-group.fr>",
   "scripts": {
     "start": "electron .",
     "build": "electron-builder --publish never",
@@ -38,6 +38,13 @@
       "entitlements": "./build/entitlements.mac.plist",
       "entitlementsInherit": "./build/entitlements.mac.inherit.plist"
     },
+    "linux": {
+      "icon": "build/icons/Icon-512x512.png",
+      "category": "productivity",
+      "target": [
+        "AppImage"
+      ]
+    },
     "win": {
       "icon": "./build/icon.ico",
       "target": "msi"
@@ -46,8 +53,7 @@
       "output": "app",
       "buildResources": "build"
     },
-    "productName": "Piman Discuss",
-    "afterSign": "/Users/kawtar/apps/discuss-electron-update/electron/notarize.js",
+    "productName": "Piman Discuss"
     "protocols": [
       {
         "name": "Piman discuss",
@@ -67,8 +73,7 @@
     "hardenedRuntime": true,
     "gatekeeperAssess": false,
     "entitlements": "build/entitlements.mac.plist",
-    "entitlementsInherit": "build/entitlements.mac.inherit.plist",
-    "afterSign": "/Users/kawtar/apps/discuss-electron-update/electron/notarize.js"
+    "entitlementsInherit": "build/entitlements.mac.inherit.plist"
   },
   "mas": {
     "entitlements": "build/entitlements.mac.plist",
