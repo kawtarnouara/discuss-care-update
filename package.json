@@ -54,7 +54,7 @@
       "output": "app",
       "buildResources": "build"
     },
-    "productName": "Piman Discuss"
+    "productName": "Piman Discuss",
     "protocols": [
       {
         "name": "Piman discuss",
