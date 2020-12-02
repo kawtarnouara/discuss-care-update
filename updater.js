@@ -56,7 +56,7 @@ exports.initUpdater = (mainWindow) => {
         }
         updateDialog('Mise à jour - Piman Discuss', {
             title: 'Mise à jour échouée',
-            details: "Impossible de terminer la mises à jour de votre application ! ",
+            details: "Impossible de terminer la mises à jour de votre application ! " ,
             withButtons: 0,
             success : 0
         });
@@ -94,7 +94,10 @@ exports.initUpdater = (mainWindow) => {
     ipcMain.on('restart_app', () => {
         dialogUpdate.destroy();
         dialogUpdate = null;
-        autoUpdater.quitAndInstall();
+        setImmediate(() => {
+            app.removeAllListeners('window-all-closed');
+            autoUpdater.quitAndInstall();
+        });
     });
 
     ipcMain.on('cancel_update', () => {
@@ -192,7 +195,7 @@ function getUpdateInfo ()  {
     var body = JSON.stringify({ platform: 'desktop', os: 'macos'});
     const request = net.request({
         method: 'POST',
-        url: 'https://api-piman.private-discuss.com/v1.0/release/get',
+        url: 'https://api.sand.private-discuss.com/v1.0/release/get',
         protocol: 'https:',
     });
     request.on('response', (response) => {
@@ -200,7 +203,7 @@ function getUpdateInfo ()  {
         console.log(`HEADERS: ${JSON.stringify(response.headers)}`);
 
         response.on('data', (chunk) => {
-            console.log(`BODY: ${JSON.parse(chunk.toString()).result.data}`)
+            console.log(`BODY: ${JSON.stringify(JSON.parse(chunk.toString()))}`)
             backendData = JSON.parse(chunk.toString()).result.data;
         });
         response.on('error', (error) => {

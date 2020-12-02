@@ -79,6 +79,7 @@ app.on('ready', async () => {
             win.webContents.send('redirect-to-url', mainurl);
         }
     });
+
 });
 
 
