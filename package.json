@@ -1,7 +1,7 @@
 {
   "name": "discuss",
   "description": "Piman Discuss, La solution de communication privee, dediee, sur mesure et chiffree",
-  "version": "4.3.9",
+  "version": "5.4.4",
   "main": "./main.js",
   "author": "PRIVATE DISCUSS <contact@piman-group.fr>",
   "scripts": {
@@ -55,6 +55,7 @@
       "buildResources": "build"
     },
     "productName": "Piman Discuss",
+    "afterSign": "/Users/kawtar/apps/discuss-electron-update/electron/notarize.js",
     "protocols": [
       {
         "name": "Piman discuss",
@@ -67,14 +68,15 @@
   "deploy": "electron-builder build --mac --win --publish always",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kawtarnouara/discuss-auto-update.git"
+    "url": "https://github.com/kawtarnouara/test-update-prompt.git"
   },
   "mac": {
     "title": "Piman Discuss",
     "hardenedRuntime": true,
     "gatekeeperAssess": false,
     "entitlements": "build/entitlements.mac.plist",
-    "entitlementsInherit": "build/entitlements.mac.inherit.plist"
+    "entitlementsInherit": "build/entitlements.mac.inherit.plist",
+    "afterSign": "/Users/kawtar/apps/discuss-electron-update/electron/notarize.js"
   },
   "mas": {
     "entitlements": "build/entitlements.mac.plist",
