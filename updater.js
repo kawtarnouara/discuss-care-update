@@ -3,13 +3,13 @@ const {autoUpdater} = require("electron-updater");
 const ProgressBar = require('electron-progressbar');
 const { BrowserWindow } = require('electron')
 const { dialog } = require('electron')
+var showNoUpdatesDialog = false;
 var dialogUpdate;
 var dialogCheckUpdate;
-var showNoUpdatesDialog = exports.showNoUpdatesDialog = false;
 let backendData;
 let autoUpdateVersion;
 exports.initUpdater = (mainWindow) => {
-    getUpdateInfo();
+    getUpdateInfo(false);
 //s    autoUpdater.requestHeaders = { "PRIVATE-TOKEN": "Yra7hy4NWZPvgsNFWWo_" };
     autoUpdater.autoDownload = false;
     autoUpdater.checkForUpdatesAndNotify();
@@ -34,6 +34,12 @@ exports.initUpdater = (mainWindow) => {
                 old_version: oldVersion,
                 details: description ? description : '',
                 force_update: force_update,
+            });
+        } else  if (showNoUpdatesDialog){
+            dialog.showMessageBox({
+                title: 'Piman Discuss',
+                message: 'Piman Discuss est à jour.',
+                detail: 'Version ' + app.getVersion()
             });
         }
     });
@@ -99,6 +105,7 @@ exports.initUpdater = (mainWindow) => {
             autoUpdater.quitAndInstall();
         });
     });
+
 
     ipcMain.on('cancel_update', () => {
         dialogCheckUpdate.destroy();
@@ -190,12 +197,13 @@ function checkupdateDialog  (dialogTitle, options)   {
     return dialogFile;
 }
 
-function getUpdateInfo ()  {
+exports.getUpdateInfo = getUpdateInfo = (showNoUpdates)  => {
+    showNoUpdatesDialog = showNoUpdates;
     const { net } = require('electron')
     var body = JSON.stringify({ platform: 'desktop', os: 'macos'});
     const request = net.request({
         method: 'POST',
-        url: 'https://api.sand.private-discuss.com/v1.0/release/get',
+        url: 'https://api.sand.private-discuss.com/v1.0/release/get' , // change this
         protocol: 'https:',
     });
     request.on('response', (response) => {
