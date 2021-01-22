@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Room</title>
+</head>
+<body>
+<div>
+    You are connected to room
+</div>
+<div>
+    <button  onclick="focusOnPage()" id="text">
+        Acceder a la page
+    </button>
+</div>
+<script>
+
+    const { ipcRenderer } = require('electron');
+    function focusOnPage() {
+        const elem = document.getElementById('text');
+        text.style.backgroundColor = 'red';
+        ipcRenderer.send('focus-window');
+    }
+
+</script>
+</body>
+</html>

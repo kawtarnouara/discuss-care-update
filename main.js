@@ -4,7 +4,7 @@ const { createWindow, getMenuAfterAuth, getMenuBeforeAuth } = require('./windows
 const { initUpdater } = require('./updater');
 const i18n = require('./configs/i18next.config');
 
-let dev = false;
+let dev = true;
 app.getLocale()
 let win;
 let splash;
@@ -80,7 +80,6 @@ app.on('ready', async () => {
         }
     });
 
-});
 
 
 app.on('before-quit', function () {
@@ -149,6 +148,64 @@ ipcMain.on('download-btn', (e, args) => {
 .catch(console.error);
 });
 
+ipcMain.on('blur-window', (e, args) => {
+    console.log('---- on blur-window ' , args);
+    openRoomDialog('teest ' , {})
+});
+});
+
+ipcMain.on('focus-window', (e, args) => {
+    setTimeout(() => {
+        if (BrowserWindow.getAllWindows() && BrowserWindow.getAllWindows()[0]){
+            BrowserWindow.getAllWindows()[0].show()
+        }
+        if(BrowserWindow.getAllWindows()[0]){
+            BrowserWindow.getAllWindows()[0].show()
+            BrowserWindow.getAllWindows()[0].focus();
+
+        }
+    }, 1000)
+
+});
+
 ipcMain.on("download", (event, info) => {
     console.log("ipcMain download triggerd");
 });
+
+
+ function openRoomDialog  (dialogTitle, options)   {
+     let display = require('electron').screen.getPrimaryDisplay();
+     let width = display.bounds.width;
+     let height = display.bounds.height;
+    let dialogFile = new BrowserWindow({
+        title: dialogTitle,
+        width: 200,
+        height: 250,
+        frame: false,
+        backgroundColor: 'white',
+        nodeIntegration: 'iframe',
+        resizable: false,
+        closable: false,
+        type: 'toolbar',
+        menuBarVisible: false,
+        fullscreenable: false,
+        alwaysOnTop: true,
+        webPreferences: {
+            nodeIntegration: true
+        },
+        x: width - 200,
+        y: height - 200
+    });
+     dialogFile.setAlwaysOnTop(true,  "screen-saver", 1);
+// allows the window to show over a fullscreen window
+     dialogFile.setVisibleOnAllWorkspaces(true);
+    let query = encodeQueryData(options);
+    dialogFile.loadURL(`file://${__dirname}/assets/room-dialog.html?${query}`);
+    return dialogFile;
+}
+function encodeQueryData(data) {
+    const ret = [];
+    for (let d in data)
+        ret.push(encodeURIComponent(d) + '=' + encodeURIComponent(data[d]));
+    return ret.join('&');
+}
