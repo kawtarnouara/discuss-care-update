@@ -177,7 +177,7 @@
             });
         return result;
     }
-    const { shell, remote, ipcRenderer } = require('electron');
+    const { shell, ipcRenderer } = require('electron');
     function openFile() {
         shell.openPath(findGetParameter('file'));
         ipcRenderer.send('close_dialog');
