@@ -76,7 +76,7 @@
   "deploy": "electron-builder build --mac --win --publish always",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kawtarnouara/test-update-prompt.git"
+    "url": "https://github.com/kawtarnouara/discuss-windows.git"
   },
   "mac": {
     "title": "Piman Discuss",
