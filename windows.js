@@ -30,7 +30,7 @@ exports.createWindow =  function(i18n, dev = true) {
         // fullscreen: true,
         width: 1400,
         height: 900,
-        minWidth: 300,
+        minWidth: 500,
         minHeight: 500,
         backgroundColor: '#ffffff',
         icon: `file://${__dirname}/icons/piman_k9o_icon.icns`,
