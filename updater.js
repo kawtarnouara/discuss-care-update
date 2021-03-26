@@ -111,6 +111,11 @@ exports.initUpdater = (mainWindow) => {
         });
     });
 
+    ipcMain.on('update-app', () => {
+        getUpdateInfo(true)
+        autoUpdater.checkForUpdatesAndNotify()
+    });
+
 
     ipcMain.on('cancel_update', () => {
         dialogCheckUpdate.destroy();
