@@ -9,9 +9,14 @@ const { dialog } = require('electron')
 
 exports.createWindow =  function(i18n, dev = true) {
     // Setup permission handler
-    session.defaultSession.setPermissionCheckHandler((webContents, permission) => {
-        return true;
-    });
+    try{
+        session.defaultSession.setPermissionRequestHandler((webContents, permission, requestingOrigin) => {
+            return true;
+        });
+    } catch(err){
+        console.log('SESSION ERROR ' , err)
+    }
+
     // session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
     //     callback({
     //         responseHeaders: {
@@ -39,7 +44,7 @@ exports.createWindow =  function(i18n, dev = true) {
             nodeIntegration: true,
             nodeIntegrationInWorker: true,
             nativeWindowOpen: true,
-            enableRemoteModule: true,
+            enableRemoteModule: true
             // contextIsolation: true,
         },
         center: true,
