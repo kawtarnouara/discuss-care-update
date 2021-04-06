@@ -13,7 +13,7 @@ let translate;
 exports.createWindow =  function(i18n, dev = true) {
     translate = i18n;
     // Setup permission handler
-    session.defaultSession.setPermissionRequestHandler((webContents, permission) => {
+    session.defaultSession.setPermissionCheckHandler((webContents, permission) => {
         return true;
     });
     // session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
@@ -40,6 +40,7 @@ exports.createWindow =  function(i18n, dev = true) {
         icon: `file://${__dirname}/icons/piman_k9o_icon.icns`,
         nodeIntegration: 'iframe',
         webPreferences: {
+            contextIsolation: false,
             nodeIntegration: true,
             nodeIntegrationInWorker: true,
             nativeWindowOpen: true,
@@ -113,6 +114,7 @@ exports.createWindow =  function(i18n, dev = true) {
         frame: false,
         alwaysOnTop: true,
         webPreferences: {
+            contextIsolation: false,
             nodeIntegration: true
         }
     });
@@ -239,6 +241,7 @@ function downloadManager2(win) {
                         nodeIntegration: 'iframe',
                         resizable: false,
                         webPreferences: {
+                            contextIsolation: false,
                             nodeIntegration: true
                         }
                     });

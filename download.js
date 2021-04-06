@@ -108,6 +108,7 @@ exports.downloadManager = function () {
                         nodeIntegration: 'iframe',
                         resizable: false,
                         webPreferences: {
+                            contextIsolation: false,
                             nodeIntegration: true
                         }
                     });
