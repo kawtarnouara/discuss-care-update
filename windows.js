@@ -10,7 +10,7 @@ const { dialog } = require('electron')
 exports.createWindow =  function(i18n, dev = true) {
     // Setup permission handler
     try{
-        session.defaultSession.setPermissionRequestHandler((webContents, permission, requestingOrigin) => {
+        session.defaultSession.setPermissionCheckHandler((webContents, permission, requestingOrigin) => {
             return true;
         });
     } catch(err){
@@ -41,6 +41,7 @@ exports.createWindow =  function(i18n, dev = true) {
         icon: `file://${__dirname}/icons/piman_k9o_icon.icns`,
         nodeIntegration: 'iframe',
         webPreferences: {
+            contextIsolation: false,
             nodeIntegration: true,
             nodeIntegrationInWorker: true,
             nativeWindowOpen: true,
@@ -114,6 +115,7 @@ exports.createWindow =  function(i18n, dev = true) {
         frame: false,
         alwaysOnTop: true,
         webPreferences: {
+            contextIsolation: false,
             nodeIntegration: true
         }
     });
@@ -240,6 +242,7 @@ function downloadManager2(win) {
                         nodeIntegration: 'iframe',
                         resizable: false,
                         webPreferences: {
+                            contextIsolation: false,
                             nodeIntegration: true
                         }
                     });
