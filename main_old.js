@@ -73,6 +73,7 @@ async function createWindow() {
         frame: false,
         alwaysOnTop: true,
         webPreferences: {
+            contextIsolation: false,
             nodeIntegration: true
         }
     });

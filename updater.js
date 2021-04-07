@@ -140,6 +140,7 @@ exports.initUpdater = (mainWindow) => {
                     width: 500,
                     height: 170,
                     webPreferences: {
+                        contextIsolation: false,
                         nodeIntegration: true
                     }
                 }
