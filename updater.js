@@ -12,6 +12,7 @@ exports.initUpdater = (mainWindow) => {
     getUpdateInfo(false);
 //s    autoUpdater.requestHeaders = { "PRIVATE-TOKEN": "Yra7hy4NWZPvgsNFWWo_" };
     autoUpdater.autoDownload = false;
+    autoUpdater.autoInstallOnAppQuit = false;
     autoUpdater.checkForUpdatesAndNotify();
     let progressBar;
     autoUpdater.on('checking-for-update', () => {
@@ -62,7 +63,7 @@ exports.initUpdater = (mainWindow) => {
         }
         updateDialog('Mise à jour - Piman Discuss', {
             title: 'Mise à jour échouée',
-            details: "Impossible de terminer la mises à jour de votre application ! " ,
+            details: "Impossible de terminer la mises à jour de votre application ! , " + JSON.stringify(err) ,
             withButtons: 0,
             success : 0
         });
@@ -98,11 +99,12 @@ exports.initUpdater = (mainWindow) => {
     });
 
     ipcMain.on('restart_app', () => {
-        dialogUpdate.destroy();
-        dialogUpdate = null;
+            dialogUpdate.destroy();
+            dialogUpdate = null;
         setImmediate(() => {
             app.removeAllListeners('window-all-closed');
             autoUpdater.quitAndInstall();
+
         });
     });
 
