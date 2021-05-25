@@ -28,6 +28,7 @@ if (process.platform === 'win32'){
         mainurl = args.slice(1)[2]
         if(win){
             win.webContents.send('open-window', mainurl);
+            mainurl = null;
             if(win.isMinimized()){
                 win.restore();
             }
@@ -43,6 +44,7 @@ app.on('open-url', function (ev, url) {
     if (app.isReady()){
         if(win){
             win.webContents.send('open-window', mainurl);
+            mainurl = null;
             if(win.isMinimized()){
                 win.restore();
             }
@@ -78,6 +80,7 @@ app.on('ready', async () => {
     win.webContents.on('did-finish-load', () => {
         if (mainurl) {
             win.webContents.send('redirect-to-url', mainurl);
+            mainurl = null;
         }
     });
 });
