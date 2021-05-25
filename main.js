@@ -24,9 +24,10 @@ if (process.platform === 'win32'){
 // The primary instance of the application will run this code, not the new  instance
     app.on('second-instance', (event, args) => {
         if (args.slice(1) && args.slice(1)[2]){
-        mainurl = args.slice(1)[2]
+        mainurl = args.slice(1)[2];
         if(win){
             win.webContents.send('open-window', mainurl);
+            mainurl = null;
             if(win.isMinimized()){
                 win.restore();
             }
@@ -42,6 +43,7 @@ app.on('open-url', function (ev, url) {
     if (app.isReady()){
         if(win){
             win.webContents.send('open-window', mainurl);
+            mainurl = null;
             if(win.isMinimized()){
                 win.restore();
             }
@@ -74,9 +76,11 @@ app.on('ready', async () => {
     }
     win = result.win;
 
+
     win.webContents.on('did-finish-load', () => {
         if (mainurl) {
             win.webContents.send('redirect-to-url', mainurl);
+            mainurl = null;
         }
     });
 
