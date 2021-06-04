@@ -37,6 +37,12 @@ if (process.platform === 'win32'){
     });
 }
 
+app.on('before-quit', () => {
+    BrowserWindow.getAllWindows().map(window => {
+        window.destroy();
+    });
+});
+
 app.on('open-url', function (ev, url) {
     ev.preventDefault();
     mainev = ev; mainurl = url;
