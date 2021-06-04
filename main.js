@@ -86,7 +86,10 @@ app.on('ready', async () => {
 });
 
 
-app.on('before-quit', function () {
+app.on('before-quit', () => {
+    BrowserWindow.getAllWindows().map(window => {
+        window.destroy();
+    });
 });
 
 // Quit when all windows are closed.
