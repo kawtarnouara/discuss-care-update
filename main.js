@@ -93,8 +93,7 @@ app.on('ready', async () => {
 });
 
 
-app.on('before-quit', function () {
-});
+
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
