@@ -3,7 +3,7 @@ const {app, BrowserWindow, ipcMain, systemPreferences, protocol, Menu, ipcRender
 const { createWindow, getMenuAfterAuth, getMenuBeforeAuth } = require('./windows');
 const { initUpdater } = require('./updater');
 const i18n = require('./configs/i18next.config');
-
+const remoteMain = require("@electron/remote/main");
 let dev = false;
 app.getLocale()
 let win;
@@ -11,6 +11,7 @@ let splash;
 let result;
 let mainurl;
 let mainev;
+remoteMain.initialize();
 // Create window on electron intialization
 if (process.platform === 'win32'){
     app.setAsDefaultProtocolClient('piman-discuss');
@@ -75,7 +76,7 @@ app.on('ready', async () => {
         mainurl = process.argv.slice(1)[0]
     }
     win = result.win;
-
+    remoteMain.enable(win.webContents);
     win.webContents.on('did-finish-load', () => {
         if (mainurl) {
             win.webContents.send('redirect-to-url', mainurl);
