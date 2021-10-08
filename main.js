@@ -124,9 +124,8 @@ exports.getVersionName = () => app.getVersion();
 
 let currentStatus = null;
 console.error(__dirname);
-ipcMain.on('setBadge', (event, status) => {
-    console.log('setbadge status' , status)
-    setBadge(status);
+ipcMain.on('setBadge', (event, count) => {
+    app.badgeCount = (count >= 0) ? count : 0
 });
 ipcMain.on('online-status-changed', (event, status) => {
     console.log('on -----');
