@@ -1,4 +1,4 @@
-const {app, BrowserWindow, Menu, session, ipcMain } = require('electron');
+const {app, BrowserWindow, Menu, session, ipcMain, shell } = require('electron');
 const ProgressBar = require('electron-progressbar');
 const { downloadManager } = require('./download');
 const {getUpdateInfo } = require('./updater');
@@ -77,6 +77,9 @@ exports.createWindow =  function(i18n, dev = true) {
                     const connectivity_win = openNewWindow(subURL, event, options, dev);
                 }
             })
+        }else {
+            event.preventDefault();
+            shell.openExternal(url);
         }
     })
 
