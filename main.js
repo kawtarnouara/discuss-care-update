@@ -3,6 +3,8 @@ const {app, BrowserWindow, ipcMain, systemPreferences, protocol, Menu, ipcRender
 const { createWindow, getMenuAfterAuth, getMenuBeforeAuth } = require('./windows');
 const { initUpdater } = require('./updater');
 const i18n = require('./configs/i18next.config');
+const Badge = require('electron-windows-badge');
+
 const remoteMain = require("@electron/remote/main");
 let dev = false;
 app.getLocale()
