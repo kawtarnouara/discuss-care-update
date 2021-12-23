@@ -38,7 +38,7 @@ async function createWindow() {
     win = new BrowserWindow({
         // width: 600,
         // height: 600,
-        title: "Piman Discuss",
+        title: "Discuss&Care",
         // fullscreen: true,
         width: 1400,
         height: 900,
@@ -119,7 +119,7 @@ async function createWindow() {
     const templateFull = [{
         label: "Application",
         submenu: [
-            {label: "À propos de Piman Discuss", selector: "orderFrontStandardAboutPanel:"},
+            {label: "À propos de Discuss&Care", selector: "orderFrontStandardAboutPanel:"},
             // { label: "Mon profil", selector: "CmdOrCtrl+,",  click: function() { shell.openExternal('https://discuss.piman2-0.fr/account/profil'); }},
             {type: "separator"},
             { label: "Mon profil", accelerator: "CmdOrCtrl+P", click: function (menuItem, browserWindow) {
@@ -189,7 +189,7 @@ async function createWindow() {
     const templateNotFull = [{
         label: "Application",
         submenu: [
-            {label: "À propos de Piman Discuss", selector: "orderFrontStandardAboutPanel:"},
+            {label: "À propos de Discuss&Care", selector: "orderFrontStandardAboutPanel:"},
             {type: "separator"},
             {
                 label: "Quit", accelerator: "Command+Q", click: function () {
@@ -362,7 +362,7 @@ function downloadManager() {
                     if (progressBar === null) {
                         progressBar = new ProgressBar({
                             indeterminate: false,
-                            title: 'Téléchargement - Piman Discuss',
+                            title: 'Téléchargement - Discuss&Care',
                             text: 'En téléchargement ...',
                             detail: 'Préparation des données ...',
                             closeOnComplete: false
@@ -383,7 +383,7 @@ function downloadManager() {
                     let path = downloadItem.getSavePath();
                     progressBar.close();
                     let dialogFile = new BrowserWindow({
-                        title: "Téléchargement - Piman Discuss", width: 500, height: 170, backgroundColor: '#eeeeee', nodeIntegration: 'iframe', resizable: false
+                        title: "Téléchargement - Discuss&Care", width: 500, height: 170, backgroundColor: '#eeeeee', nodeIntegration: 'iframe', resizable: false
                     });
                     dialogFile.loadURL(`file://${__dirname}/assets/dialogFile.html?file=${path}`);
                 }

@@ -42,8 +42,8 @@ exports.initUpdater = (mainWindow) => {
         } else  if (showNoUpdatesDialog){
             dialog.showMessageBox({
                 icon: dialogImage,
-                title: 'Piman Discuss',
-                message: 'Piman Discuss est à jour.',
+                title: 'Discuss&Care',
+                message: 'Discuss&Care est à jour.',
                 detail: 'Version ' + app.getVersion()
             });
         }
@@ -53,8 +53,8 @@ exports.initUpdater = (mainWindow) => {
         if (showNoUpdatesDialog){
             dialog.showMessageBox({
                 icon: dialogImage,
-                title: 'Piman Discuss',
-                message: 'Piman Discuss est à jour.',
+                title: 'Discuss&Care',
+                message: 'Discuss&Care est à jour.',
                 detail: 'Version ' + app.getVersion()
             });
         }
@@ -66,7 +66,7 @@ exports.initUpdater = (mainWindow) => {
         if (progressBar){
             progressBar.close();
         }
-        updateDialog('Mise à jour - Piman Discuss', {
+        updateDialog('Mise à jour - Discuss&Care', {
             title: 'Mise à jour échouée',
             details: "Impossible de terminer la mises à jour de votre application ! ",
             withButtons: 0,
@@ -94,7 +94,7 @@ exports.initUpdater = (mainWindow) => {
             progressBar.close();
         }
 
-         dialogUpdate = updateDialog('Mise à jour - Piman Discuss', {
+         dialogUpdate = updateDialog('Mise à jour - Discuss&Care', {
             title: 'Mise à jour terminée',
             details: "Votre application a été mise à jour. Vous devez redémarrer l'application maintenant",
             withButtons: 1,
@@ -131,7 +131,7 @@ exports.initUpdater = (mainWindow) => {
         if (!progressBar) {
             progressBar = new ProgressBar({
                 indeterminate: false,
-                title: 'Mise à jour - Piman Discuss',
+                title: 'Mise à jour - Discuss&Care',
                 text: 'En téléchargement ...',
                 detail: 'Préparation de la nouvelle version ...',
                 closeOnComplete: false,

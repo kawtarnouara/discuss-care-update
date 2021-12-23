@@ -16,7 +16,7 @@ let mainev;
 remoteMain.initialize();
 // Create window on electron intialization
 if (process.platform === 'win32'){
-    app.setAsDefaultProtocolClient('piman-discuss');
+    app.setAsDefaultProtocolClient('discuss-care');
 
     const primaryInstance = app.requestSingleInstanceLock();
     if (!primaryInstance) {

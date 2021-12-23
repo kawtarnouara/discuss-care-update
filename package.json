@@ -1,6 +1,6 @@
 {
-  "name": "discuss",
-  "description": "Piman Discuss, La solution de communication privee, dediee, sur mesure et chiffree",
+  "name": "discuss-care",
+  "description": "Discuss&Care, La solution de communication privee, dediee, sur mesure et chiffree",
   "version": "5.4.7",
   "main": "./main.js",
   "author": "PRIVATE DISCUSS",
@@ -34,7 +34,7 @@
     "electron-winstaller": "^4.0.0"
   },
   "build": {
-    "appId": "com.piman-discuss.piman",
+    "appId": "com.discuss-care.piman",
     "mac": {
       "category": "productivity",
       "gatekeeperAssess": false,
@@ -64,12 +64,12 @@
       "output": "app",
       "buildResources": "build"
     },
-    "productName": "Piman Discuss",
+    "productName": "Discuss&Care",
     "protocols": [
       {
-        "name": "Piman discuss",
+        "name": "Discuss&Care",
         "schemes": [
-          "piman-discuss"
+          "discuss-care"
         ]
       }
     ]
@@ -80,7 +80,7 @@
     "url": "https://github.com/kawtarnouara/discuss-windows.git"
   },
   "mac": {
-    "title": "Piman Discuss",
+    "title": "Discuss&Care",
     "hardenedRuntime": true,
     "gatekeeperAssess": false,
     "entitlements": "build/entitlements.mac.plist",

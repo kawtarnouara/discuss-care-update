@@ -27,7 +27,7 @@ exports.createWindow =  function(i18n, dev = true) {
     let  win = new BrowserWindow({
         // width: 600,
         // height: 600,
-        title: "Piman Discuss",
+        title: "Discuss&Care",
         // fullscreen: true,
         width: 1400,
         height: 900,
@@ -142,7 +142,7 @@ function openNewWindow(subURL, event, options, dev){
     // win.webContents.executeJavaScript('localStorage.getItem("jwt_token")').then(function(value){
 
     Object.assign(options, {
-        title: "Piman Discuss",
+        title: "Discuss&Care",
         modal: false,
         // parent: win,
         width: 1300,
@@ -228,7 +228,7 @@ function downloadManager2(win) {
                     if (progressBar === null) {
                         progressBar = new ProgressBar({
                             indeterminate: false,
-                            title: 'Téléchargement - Piman Discuss',
+                            title: 'Téléchargement - Discuss&Care',
                             text: 'En téléchargement ...',
                             detail: 'Préparation des données ...',
                             closeOnComplete: false,
@@ -264,7 +264,7 @@ function downloadManager2(win) {
                     let path = downloadItem.getSavePath();
                     progressBar.close();
                     let dialogFile = new BrowserWindow({
-                        title: "Téléchargement - Piman Discuss",
+                        title: "Téléchargement - Discuss&Care",
                         width: 500,
                         height: 170,
                         backgroundColor: '#eeeeee',
@@ -293,7 +293,7 @@ function downloadManager2(win) {
 function openAbout(){
     openAboutWindow({
         icon_path: `https://api-piman.private-discuss.com/images/Logo_pimandiscuss.svg`,
-        product_name: 'Piman Discuss',
+        product_name: 'Discuss&Care',
         copyright: 'Copyright © 2021 PRIVATE DISCUSS',
         css_path: `../../assets/custom-about.css`,
         win_options: {
