@@ -77,7 +77,7 @@
   "deploy": "electron-builder build --mac --win --publish always",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kawtarnouara/discuss-windows.git"
+    "url": "https://github.com/PrivateDiscuss/discuss-care-windows.git"
   },
   "mac": {
     "title": "Discuss&Care",
