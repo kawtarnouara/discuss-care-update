@@ -214,7 +214,7 @@ function checkupdateDialog  (dialogTitle, options)   {
 exports.getUpdateInfo = getUpdateInfo = (showNoUpdates)  => {
     showNoUpdatesDialog = showNoUpdates;
     const { net } = require('electron')
-    var body = JSON.stringify({ platform: 'desktop', os: 'windows'});
+    var body = JSON.stringify({ platform: 'desktop', os: 'windows', organization_id:2392});
     const request = net.request({
         method: 'POST',
         url: 'https://api-piman.private-discuss.com/v1.0/release/get' ,
