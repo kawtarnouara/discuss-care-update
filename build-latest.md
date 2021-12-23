@@ -6,4 +6,4 @@
 
 ## Generate DMG from .app :
 
-./node_modules/.bin/electron-installer-dmg ../release-builds/discuss-darwin-x64/discuss.app Discuss --out="../release-builds" --icon="../helpers/icons/piman.png" --background="../helpers/icons/dmg_splash.png" --title="Installation Piman Discuss" --overwrite
+./node_modules/.bin/electron-installer-dmg ../release-builds/discuss-darwin-x64/discuss.app Discuss --out="../release-builds" --icon="../helpers/icons/piman.png" --background="../helpers/icons/dmg_splash.png" --title="Installation Discuss & Care" --overwrite

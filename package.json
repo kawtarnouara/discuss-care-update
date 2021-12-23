@@ -1,6 +1,6 @@
 {
-  "name": "discuss",
-  "description": "Piman Discuss, La solution de communication privee, dediee, sur mesure et chiffree",
+  "name": "discuss-care",
+  "description": "Discuss & Care, La solution de communication privee, dediee, sur mesure et chiffree",
   "version": "5.6.1",
   "main": "./main.js",
   "author": "PRIVATE DISCUSS",
@@ -32,7 +32,7 @@
     "electron-winstaller": "^4.0.2"
   },
   "build": {
-    "appId": "com.piman-discuss.piman",
+    "appId": "com.discuss-care.piman",
     "mac": {
       "category": "productivity",
       "gatekeeperAssess": false,
@@ -41,7 +41,7 @@
       "entitlementsInherit": "./build/entitlements.mac.inherit.plist"
     },
     "linux": {
-      "icon": "build/icons/Icon-512x512.png",
+      "icon": "build/icons/care-icon-512.png",
       "category": "productivity",
       "target": [
         "AppImage"
@@ -55,13 +55,12 @@
       "output": "app",
       "buildResources": "build"
     },
-    "productName": "Piman Discuss",
-    "afterSign": "/Users/kawtar/apps/discuss-electron-update/electron/notarize.js",
+    "productName": "Discuss & Care",
     "protocols": [
       {
-        "name": "Piman discuss",
+        "name": "Discuss & Care",
         "schemes": [
-          "piman-discuss"
+          "discuss-care"
         ]
       }
     ]
@@ -72,12 +71,12 @@
     "url": "https://github.com/kawtarnouara/discuss-auto-update.git"
   },
   "mac": {
-    "title": "Piman Discuss",
+    "title": "Discuss & Care",
     "hardenedRuntime": true,
     "gatekeeperAssess": false,
     "entitlements": "build/entitlements.mac.plist",
     "entitlementsInherit": "build/entitlements.mac.inherit.plist",
-    "afterSign": "/Users/kawtar/apps/discuss-electron-update/electron/notarize.js"
+    "afterSign": "/Users/kawtar/apps/discuss-care-update/notarize.js"
   },
   "mas": {
     "entitlements": "build/entitlements.mac.plist",

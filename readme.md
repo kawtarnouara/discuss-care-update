@@ -6,7 +6,7 @@
 
 - Edit `package.json` :
 
-    - "name": "Piman Discuss"
+    - "name": "Discuss & Care"
     - "version": "x.x.x"
     - "main": "./main.js"
 
