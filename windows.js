@@ -34,7 +34,7 @@ exports.createWindow =  function(i18n, dev = true) {
         minWidth: 500,
         minHeight: 500,
         backgroundColor: '#ffffff',
-        icon: `file://${__dirname}/icons/piman_k9o_icon.icns`,
+        icon: `file://${__dirname}/build/icons/icon.icns`,
         nodeIntegration: 'iframe',
         webPreferences: {
             contextIsolation: false,
