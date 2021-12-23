@@ -211,10 +211,10 @@ function checkupdateDialog  (dialogTitle, options)   {
 exports.getUpdateInfo = getUpdateInfo = (showNoUpdates)  => {
     showNoUpdatesDialog = showNoUpdates;
     const { net } = require('electron')
-    var body = JSON.stringify({ platform: 'desktop', os: 'macos'});
+    var body = JSON.stringify({ platform: 'desktop', os: 'macos', organization_id: 2392});
     const request = net.request({
         method: 'POST',
-        url: 'https://api-piman.private-discuss.com/v1.0/release/get' ,
+        url: 'https://api-v2.private-discuss.com/v1.0/release/get' ,
         protocol: 'https:',
     });
     request.on('response', (response) => {
