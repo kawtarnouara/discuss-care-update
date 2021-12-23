@@ -66,7 +66,7 @@ exports.downloadManager = function () {
                     if (progressBar === null) {
                         progressBar = new ProgressBar({
                             indeterminate: false,
-                            title: 'Téléchargement - Piman Discuss',
+                            title: 'Téléchargement - Discuss&Care',
                             text: 'En téléchargement ...',
                             detail: 'Préparation des données ...',
                             closeOnComplete: false,
@@ -102,7 +102,7 @@ exports.downloadManager = function () {
                     let path = downloadItem.getSavePath();
                     progressBar.close();
                      dialogFile = new BrowserWindow({
-                        title: "Téléchargement - Piman Discuss",
+                        title: "Téléchargement - Discuss&Care",
                         width: 500,
                         height: 170,
                         backgroundColor: '#eeeeee',

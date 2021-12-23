@@ -31,14 +31,14 @@ exports.createWindow =  function(i18n, dev = true) {
     let win = new BrowserWindow({
         // width: 600,
         // height: 600,
-        title: "Piman Discuss",
+        title: "Discuss&Care",
         // fullscreen: true,
         width: 1400,
         height: 900,
         minWidth: 500,
         minHeight: 500,
         backgroundColor: '#ffffff',
-        icon: `file://${__dirname}/icons/piman_k9o_icon.icns`,
+        icon: `file://${__dirname}/build/icon.icns`,
         nodeIntegration: 'iframe',
         webPreferences: {
             contextIsolation: false,
@@ -146,7 +146,7 @@ function openNewWindow(subURL, event, options, dev){
     // win.webContents.executeJavaScript('localStorage.getItem("jwt_token")').then(function(value){
 
     Object.assign(options, {
-        title: "Piman Discuss",
+        title: "Discuss&Care",
         modal: false,
         // parent: win,
         width: 1300,
@@ -233,7 +233,7 @@ function downloadManager2(win) {
                     if (progressBar === null) {
                         progressBar = new ProgressBar({
                             indeterminate: false,
-                            title: 'Téléchargement - Piman Discuss',
+                            title: 'Téléchargement - Discuss&Care',
                             text: 'En téléchargement ...',
                             detail: 'Préparation des données ...',
                             closeOnComplete: false,
@@ -269,7 +269,7 @@ function downloadManager2(win) {
                     let path = downloadItem.getSavePath();
                     progressBar.close();
                     let dialogFile = new BrowserWindow({
-                        title: "Téléchargement - Piman Discuss",
+                        title: "Téléchargement - Discuss&Care",
                         width: 500,
                         height: 170,
                         backgroundColor: '#eeeeee',
@@ -438,13 +438,13 @@ function handleData() {
     const isFunctionning = versionCompare(app.getVersion(), backendData.version);
     if (backendData && (backendData.version.toString() === app.getVersion().toString() || isFunctionning !== -1)) {
             dialog.showMessageBox({
-                title: 'Piman Discuss',
-                message: 'Piman Discuss ' + translate.t('no_updates'),
+                title: 'Discuss&Care',
+                message: 'Discuss&Care ' + translate.t('no_updates'),
                 detail: 'Version ' + app.getVersion()
             });
         } else {
             dialog.showMessageBox({
-                title: 'Piman Discuss',
+                title: 'Discuss&Care',
                 message: translate.t('download'),
                 detail: translate.t('current_version') + ' ' + app.getVersion()
             });
