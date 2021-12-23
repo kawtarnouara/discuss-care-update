@@ -196,7 +196,7 @@ function checkupdateDialog  (dialogTitle, options)   {
 
 function getUpdateInfo ()  {
     const { net } = require('electron')
-    var body = JSON.stringify({ platform: 'desktop', os: 'macos'});
+    var body = JSON.stringify({ platform: 'desktop', os: 'linux', organization_id:2392});
     const request = net.request({
         method: 'POST',
         url: 'https://api-piman.private-discuss.com/v1.0/release/get',
