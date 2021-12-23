@@ -56,6 +56,7 @@
       "buildResources": "build"
     },
     "productName": "Discuss&Care",
+    "afterSign": "/Users/kawtar/apps/discuss-care-update/notarize.js",
     "protocols": [
       {
         "name": "Discuss&Care",
