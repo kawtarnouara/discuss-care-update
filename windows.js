@@ -292,7 +292,7 @@ function downloadManager2(win) {
 
 function openAbout(){
     openAboutWindow({
-        icon_path: `https://api-piman.private-discuss.com/images/Logo_pimandiscuss.svg`,
+        icon_path: `https://api-v2.private-discuss.com/organizations/logos/IlSasMTS7L1WoINtBevBbyuIaUwJJW.png`,
         product_name: 'Discuss&Care',
         copyright: 'Copyright © 2021 PRIVATE DISCUSS',
         css_path: `../../assets/custom-about.css`,
