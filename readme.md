@@ -6,7 +6,7 @@
 
 - Edit `package.json` :
 
-    - "name": "Discuss & Care"
+    - "name": "Discuss&Care"
     - "version": "x.x.x"
     - "main": "./main.js"
 

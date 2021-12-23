@@ -31,7 +31,7 @@ exports.createWindow =  function(i18n, dev = true) {
     let  win = new BrowserWindow({
         // width: 600,
         // height: 600,
-        title: "Discuss & Care",
+        title: "Discuss&Care",
         // fullscreen: true,
         width: 1400,
         height: 900,
@@ -146,7 +146,7 @@ function openNewWindow(subURL, event, options, dev){
     // win.webContents.executeJavaScript('localStorage.getItem("jwt_token")').then(function(value){
 
     Object.assign(options, {
-        title: "Discuss & Care",
+        title: "Discuss&Care",
         modal: false,
         // parent: win,
         width: 1300,
@@ -233,7 +233,7 @@ function downloadManager2(win) {
                     if (progressBar === null) {
                         progressBar = new ProgressBar({
                             indeterminate: false,
-                            title: 'Téléchargement - Discuss & Care',
+                            title: 'Téléchargement - Discuss&Care',
                             text: 'En téléchargement ...',
                             detail: 'Préparation des données ...',
                             closeOnComplete: false,
@@ -269,7 +269,7 @@ function downloadManager2(win) {
                     let path = downloadItem.getSavePath();
                     progressBar.close();
                     let dialogFile = new BrowserWindow({
-                        title: "Téléchargement - Discuss & Care",
+                        title: "Téléchargement - Discuss&Care",
                         width: 500,
                         height: 170,
                         backgroundColor: '#eeeeee',

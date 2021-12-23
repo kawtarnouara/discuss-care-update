@@ -1,6 +1,6 @@
 {
   "name": "discuss-care",
-  "description": "Discuss & Care, La solution de communication privee, dediee, sur mesure et chiffree",
+  "description": "Discuss&Care, La solution de communication privee, dediee, sur mesure et chiffree",
   "version": "5.6.1",
   "main": "./main.js",
   "author": "PRIVATE DISCUSS",
@@ -55,10 +55,10 @@
       "output": "app",
       "buildResources": "build"
     },
-    "productName": "Discuss & Care",
+    "productName": "Discuss&Care",
     "protocols": [
       {
-        "name": "Discuss & Care",
+        "name": "Discuss&Care",
         "schemes": [
           "discuss-care"
         ]
@@ -71,7 +71,7 @@
     "url": "https://github.com/kawtarnouara/discuss-auto-update.git"
   },
   "mac": {
-    "title": "Discuss & Care",
+    "title": "Discuss&Care",
     "hardenedRuntime": true,
     "gatekeeperAssess": false,
     "entitlements": "build/entitlements.mac.plist",
