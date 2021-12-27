@@ -199,7 +199,7 @@ function getUpdateInfo ()  {
     var body = JSON.stringify({ platform: 'desktop', os: 'linux', organization_id:2392});
     const request = net.request({
         method: 'POST',
-        url: 'https://api-v2.private-discuss.com/v1.0/release/get',
+        url: 'https://api-v2.discussncare.com/v1.0/release/get',
         protocol: 'https:',
     });
     request.on('response', (response) => {
